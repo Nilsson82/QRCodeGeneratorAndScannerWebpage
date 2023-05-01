@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code Generator and Scanner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>QR Code Generator and Scanner</h1>
+      <button id="show-popup-btn">Show Direct Link QR Code</button>
+    </header>
+    <main>
+      <section class="generator">
+        <h2>QR Code Generator</h2>
+        <label for="input-text">Enter your text:</label>
+        <textarea
+          id="input-text"
+          placeholder="Enter your text here..."
+          rows="5"
+          maxlength="200"
+        ></textarea>
+        <div id="qr-code"></div>
+        <div class="print-btn-container">
+          <button id="print-btn">Print QR Code</button>
+        </div>
+      </section>
+      <section class="scanner">
+        <h2>QR Code Scanner</h2>
+        <video id="qr-video" width="300" height="200"></video>
+        <p id="qr-result">No QR code detected</p>
+      </section>
+    </main>
+    <div id="popup-box" class="hidden popup-container">
+      <div class="popup-content">
+        <p>This QR code is a direct link to the page:</p>
+        <div id="direct-link-qr"></div>
+        <button id="close-direct-link-btn" class="close-btn">Close</button>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@zxing/library@latest/umd/index.min.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
